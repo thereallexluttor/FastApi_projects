@@ -18,3 +18,7 @@ order = {
         }
     ]
 }
+
+@app.get('/orders')
+def get_orders():
+    return {'orders': [orders]}
