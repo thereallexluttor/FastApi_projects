@@ -22,3 +22,8 @@ order = {
 @app.get('/orders')
 def get_orders():
     return {'orders': [orders]}
+
+@app.post('/orders', status_code=status.HTTP_201_CREATED)
+def create_order():
+    return order
+
