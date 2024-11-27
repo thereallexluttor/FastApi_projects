@@ -1,4 +1,5 @@
 from datetime import datetime
+from http import HTTPStatus
 from uuid import UUID
 
 from starlette.responses import Response
@@ -30,3 +31,11 @@ def create_order():
 @app.get('/orders/{order_id}')
 def get_order(order_id: UUID):
  return order
+
+@app.put('/orders/{order_id}')
+def update_order(order_id: UUID):
+ return order
+
+@app.delete('/orders/{order_id}', status_code=status.HTTP_204_NO_CONTENT)
+def delete_order(order_id: UUID):
+ return Response(status_code=HTTPStatus.NO_CONTENT.value)
