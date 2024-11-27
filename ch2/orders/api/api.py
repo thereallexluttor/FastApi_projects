@@ -27,3 +27,6 @@ def get_orders():
 def create_order():
     return order
 
+@app.get('/orders/{order_id}')
+def get_order(order_id: UUID):
+ return order
