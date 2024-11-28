@@ -20,6 +20,8 @@ order = {
     ]
 }
 
+
+
 @app.get('/orders')
 def get_orders():
     return {'orders': [orders]}
@@ -39,3 +41,11 @@ def update_order(order_id: UUID):
 @app.delete('/orders/{order_id}', status_code=status.HTTP_204_NO_CONTENT)
 def delete_order(order_id: UUID):
  return Response(status_code=HTTPStatus.NO_CONTENT.value)
+
+@app.post('/orders/{order_id}/cancel')
+def cancel_order(order_id: UUID):
+ return order
+
+@app.post('/orders/{order_id}/pay')
+def pay_order(order_id: UUID):
+ return order
