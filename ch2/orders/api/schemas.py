@@ -22,6 +22,11 @@ class OrderItemSchema(BaseModel):
     size: Size
     quantity: Optional[conint(ge=1, strict=True)] = 1 # type: ignore
 
+    @validator('quantity')
+    def quantity_non_nullable(cls, value):
+        assert value is not None, 'quantity may not be None'
+        return value
+
 class CreateOrderSchema(BaseModel):
     order: conlist(OrderItemSchema, min_length=1) # type: ignore
 
