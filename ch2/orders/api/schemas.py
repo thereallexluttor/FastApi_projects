@@ -36,5 +36,5 @@ class GetOrderSchema(CreateOrderSchema):
     created: datetime
     status: Status
 
-class GetOrderSchema(BaseModel):
+class GetOrdersSchema(BaseModel):
     orders: List[GetOrderSchema]
