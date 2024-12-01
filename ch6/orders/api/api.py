@@ -5,7 +5,7 @@ from uuid import UUID
 from fastapi import HTTPException
 from starlette import status
 from starlette.responses import Response
-e
+
 from typing import Optional
 
 from orders.app import app
